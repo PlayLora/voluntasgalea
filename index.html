@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Voluntas Galea d.o.o.</title>
+<meta name="description" content="Voluntas Galea d.o.o. — društvo za trgovinu i usluge iz Zagreba. Razvija PlayLoru, online Loru za četvero.">
+<meta name="theme-color" content="#1b2430">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Jedan stupac, mirna ploha; naglasak je mjed (galea = kaciga), nikad crvena. */
+:root {
+  --ground: #f3f2ef;
+  --surface: #ffffff;
+  --ink: #1b2430;
+  --ink-soft: #5b6672;
+  --ink-faint: #8a939d;
+  --line: #ddddd7;
+  --brass: #8a6a2f;
+  --brass-soft: #f0e9da;
+  --display: 'Spectral', Georgia, 'Times New Roman', serif;
+  --body: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --ground: #13181f;
+    --surface: #1b2430;
+    --ink: #eceae5;
+    --ink-soft: #a8b1bb;
+    --ink-faint: #76808c;
+    --line: #2b3542;
+    --brass: #c9a461;
+    --brass-soft: #262b2b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --ground: #13181f;
+  --surface: #1b2430;
+  --ink: #eceae5;
+  --ink-soft: #a8b1bb;
+  --ink-faint: #76808c;
+  --line: #2b3542;
+  --brass: #c9a461;
+  --brass-soft: #262b2b;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font: 400 16px/1.65 var(--body);
+}
+.omot {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(2rem, 6vw, 4rem);
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+/* ── zaglavlje ─────────────────────────────────────────────── */
+.vrh { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 0.75rem 1.5rem; }
+.oznaka {
+  font-size: 0.7rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--brass); margin: 0;
+}
+.jezik { display: flex; gap: 0.25rem; }
+.jezik button {
+  font: 600 0.7rem/1 var(--body); letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink-soft); background: none; border: 1px solid transparent;
+  border-radius: 999px; padding: 0.45rem 0.6rem; cursor: pointer;
+}
+.jezik button[aria-pressed='true'] { color: var(--ink); border-color: var(--line); background: var(--surface); }
+.jezik button:focus-visible, a:focus-visible { outline: 2px solid var(--brass); outline-offset: 2px; }
+
+h1 {
+  font: 600 clamp(2rem, 7vw, 3.1rem)/1.12 var(--display);
+  letter-spacing: -0.015em; text-wrap: balance;
+  margin: 1.75rem 0 0;
+}
+.puni-naziv { color: var(--ink-faint); font-size: 0.85rem; margin: 0.6rem 0 0; }
+.uvod { color: var(--ink-soft); font-size: 1.08rem; max-width: 34rem; margin: 1.5rem 0 0; }
+
+hr.crta { border: 0; border-top: 1px solid var(--line); margin: clamp(2.25rem, 6vw, 3.25rem) 0; }
+
+h2 {
+  font: 600 0.72rem/1 var(--body); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-faint); margin: 0 0 1.1rem;
+}
+
+/* ── PlayLora ──────────────────────────────────────────────── */
+.proizvod {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+}
+.proizvod h3 { font: 600 1.3rem/1.2 var(--display); margin: 0; }
+.proizvod p { color: var(--ink-soft); margin: 0.5rem 0 0; max-width: 32rem; }
+.proizvod a.veza {
+  display: inline-block; margin-top: 1.1rem; font-weight: 600; font-size: 0.95rem;
+  color: var(--brass); text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px;
+}
+.proizvod a.veza:hover { color: var(--ink); }
+
+/* ── kontakt i podaci ──────────────────────────────────────── */
+dl { display: grid; grid-template-columns: 1fr; gap: 0.9rem 2rem; margin: 0; }
+@media (min-width: 34rem) { dl { grid-template-columns: 11rem 1fr; } }
+dt { color: var(--ink-faint); font-size: 0.78rem; letter-spacing: 0.04em; text-transform: uppercase; }
+dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+dd a { color: var(--ink); text-decoration-color: var(--line); text-underline-offset: 3px; }
+dd a:hover { text-decoration-color: var(--brass); }
+.brojke { font-variant-numeric: tabular-nums; }
+.biljeska { color: var(--ink-faint); font-size: 0.82rem; }
+
+footer { color: var(--ink-faint); font-size: 0.8rem; margin-top: clamp(2.5rem, 7vw, 4rem); }
+
+[lang-hr], [lang-en] { display: none; }
+html[lang='hr'] [lang-hr], html[lang='en'] [lang-en] { display: revert; }
+</style>
+</head>
+<body>
+<div class="omot">
+
+  <div class="vrh">
+    <p class="oznaka">
+      <span lang-hr>Zagreb · Hrvatska</span>
+      <span lang-en>Zagreb · Croatia</span>
+    </p>
+    <div class="jezik" role="group" aria-label="Jezik / Language">
+      <button type="button" id="hr" aria-pressed="true">Hrvatski</button>
+      <button type="button" id="en" aria-pressed="false">English</button>
+    </div>
+  </div>
+
+  <h1>Voluntas Galea d.o.o.</h1>
+  <p class="puni-naziv">Voluntas Galea društvo s ograničenom odgovornošću za trgovinu i usluge</p>
+
+  <p class="uvod">
+    <span lang-hr>Društvo za trgovinu i usluge sa sjedištem u Zagrebu. Razvijamo i održavamo
+      PlayLoru — igru koja klasičnu Loru prenosi na internet.</span>
+    <span lang-en>A trade and services company based in Zagreb, Croatia. We build and run
+      PlayLora, which brings the classic card game Lora online.</span>
+  </p>
+
+  <hr class="crta">
+
+  <h2><span lang-hr>Što radimo</span><span lang-en>What we do</span></h2>
+
+  <div class="proizvod">
+    <h3>PlayLora</h3>
+    <p>
+      <span lang-hr>Lora za četvero igrača, online. Osam vrsta igara, 32 igre po partiji,
+        statistika i natjecanja — bez miješanja karata rukom.</span>
+      <span lang-en>Lora for four players, online. Eight game types, 32 games per match,
+        statistics and competitions — with no shuffling by hand.</span>
+    </p>
+    <a class="veza" href="https://www.playlora.eu">www.playlora.eu</a>
+  </div>
+
+  <hr class="crta">
+
+  <h2><span lang-hr>Kontakt</span><span lang-en>Contact</span></h2>
+
+  <dl>
+    <dt><span lang-hr>E-pošta</span><span lang-en>Email</span></dt>
+    <dd><a href="mailto:zeljko.hadzija@voluntasgalea.com">zeljko.hadzija@voluntasgalea.com</a></dd>
+
+    <dt><span lang-hr>Telefon</span><span lang-en>Phone</span></dt>
+    <dd class="brojke"><a href="tel:+385914849227">+385 91 484 9227</a></dd>
+
+    <dt><span lang-hr>Adresa</span><span lang-en>Address</span></dt>
+    <dd>Ulica Ive Dulčića 28<br>10360 Sesvete<span lang-hr>, Hrvatska</span><span lang-en>, Croatia</span></dd>
+  </dl>
+
+  <hr class="crta">
+
+  <h2><span lang-hr>Podaci o društvu</span><span lang-en>Company details</span></h2>
+
+  <dl>
+    <dt><span lang-hr>Tvrtka</span><span lang-en>Registered name</span></dt>
+    <dd>Voluntas Galea društvo s ograničenom odgovornošću za trgovinu i usluge</dd>
+
+    <dt><span lang-hr>Skraćena tvrtka</span><span lang-en>Short name</span></dt>
+    <dd>Voluntas Galea d.o.o.</dd>
+
+    <dt><span lang-hr>Pravni oblik</span><span lang-en>Legal form</span></dt>
+    <dd>
+      <span lang-hr>društvo s ograničenom odgovornošću</span>
+      <span lang-en>limited liability company (<i>društvo s ograničenom odgovornošću</i>)</span>
+    </dd>
+
+    <dt>OIB</dt>
+    <dd class="brojke">51091842236</dd>
+
+    <dt><span lang-hr>Sud upisa i MBS</span><span lang-en>Court of registration, MBS</span></dt>
+    <dd>
+      <span lang-hr>Trgovački sud u Zagrebu, MBS <span class="brojke">081113264</span></span>
+      <span lang-en>Commercial Court in Zagreb, MBS <span class="brojke">081113264</span></span>
+    </dd>
+
+    <dt><span lang-hr>Temeljni kapital</span><span lang-en>Share capital</span></dt>
+    <dd>
+      <span class="brojke">2.654,46 EUR</span>
+      <span lang-hr>, uplaćen u cijelosti</span><span lang-en>, paid in full</span>
+      <br>
+      <span class="biljeska">
+        <span lang-hr>U sudskom registru upisan kao 20.000,00 kuna; iznos u eurima je preračunat
+          po fiksnom tečaju konverzije.</span>
+        <span lang-en>Recorded in the court register as HRK 20,000.00; the euro figure is converted
+          at the fixed conversion rate.</span>
+      </span>
+    </dd>
+
+    <dt><span lang-hr>Uprava</span><span lang-en>Management</span></dt>
+    <dd>
+      <span lang-hr>Željko Hadžija, direktor — zastupa društvo pojedinačno i samostalno</span>
+      <span lang-en>Željko Hadžija, director — represents the company individually and independently</span>
+    </dd>
+  </dl>
+
+  <footer>
+    © <span id="godina">2026</span> Voluntas Galea d.o.o.
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var html = document.documentElement;
+    var gumbi = { hr: document.getElementById('hr'), en: document.getElementById('en') };
+    function postavi(jezik) {
+      html.setAttribute('lang', jezik);
+      gumbi.hr.setAttribute('aria-pressed', String(jezik === 'hr'));
+      gumbi.en.setAttribute('aria-pressed', String(jezik === 'en'));
+    }
+    gumbi.hr.addEventListener('click', function () { postavi('hr'); });
+    gumbi.en.addEventListener('click', function () { postavi('en'); });
+    /* Posjetitelju izvan hrvatskog govornog područja odmah engleski; izbor je uvijek jedan klik. */
+    var n = (navigator.language || 'hr').toLowerCase();
+    postavi(/^(hr|bs|sr|me)/.test(n) ? 'hr' : 'en');
+    document.getElementById('godina').textContent = String(new Date().getFullYear());
+  })();
+</script>
+</body>
+</html>
